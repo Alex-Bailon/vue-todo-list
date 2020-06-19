@@ -12,7 +12,7 @@
       <a class="waves-effect waves-light btn"  v-on:click="add()">ADD</a>
       <ol>
         <li v-for="(todo, i) in existingToDo">
-          <span>{{ todo.text }}</span>
+          <strong>{{ todo.text }}</strong>
           <a class="waves-effect waves-light red darken-4 btn-small" @click="deleteToDo(i)">Remove</a>
         </li>
       </ol>
