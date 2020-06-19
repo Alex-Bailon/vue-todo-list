@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1>TODO Lsit Vue!</h1>
-      <input 
-        type="text"
-        class="input"
-        v-model="newToDo"
-      />
-      <button class="add-button" v-on:click="add()">ADD</button>
+      <h1>TODO List Vue!</h1>
+      <form @submit.prevent="add()">
+        <input 
+          type="text"
+          class="input"
+          v-model="newToDo"        
+        />
+      </form>
+      <a class="waves-effect waves-light btn"  v-on:click="add()">ADD</a>
       <ol>
         <li v-for="(todo, i) in existingToDo">
-          <span>
-            {{ todo.text }}
-          </span>
-          <button class="delete-button" @click="deleteToDo(i)">X</button>
+          <span>{{ todo.text }}</span>
+          <a class="waves-effect waves-light red darken-4 btn-small" @click="deleteToDo(i)">Remove</a>
         </li>
       </ol>
     </div>
@@ -57,4 +57,7 @@ export default {
 </script>
 
 <style>
+ol {
+  line-height: 50px;
+}
 </style>
